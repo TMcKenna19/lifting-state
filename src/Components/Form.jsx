@@ -9,11 +9,14 @@ const Form = props => {
     const [ZipCode, setZipCode] = useState("");
     const [IntOrExt, setIntOrExt] = useState("");
     const [NumberOfRooms, setNumberOfRooms] = useState(0);
-    const [Discription, setDisctiption] = useState("")
+    const [TimeFrame, setTimeFrame] = useState("")
 
     
     const onSubmitHandler = e =>{
         e.preventDefault();
+        const customerInfo = {FirstName, LastName, Email, PhoneNumber, ZipCode, IntOrExt, NumberOfRooms, TimeFrame};
+        /** Pass in customerInfo into newLead ln 16 App  */
+        props.newLead(customerInfo)
     }
 
     return(
@@ -21,39 +24,39 @@ const Form = props => {
             <h1>Request a Quote</h1>
             <form onSubmit={onSubmitHandler}>
                 <div>
-                    <label htmlFor="FirstName">First Name:</label>
-                    <input type="text" name="FirstName" className="form-control-md mt-3" onChange={(e) => setFirstName(e.target.value)}/>
+                    <label htmlFor="FirstName"></label>
+                    <input type="text" name="FirstName"className="form-control-md mt-3" placeholder="First Name" onChange={(e) => setFirstName(e.target.value)}/>
                 </div>
                 <div>
-                    <label htmlFor="LastName">Last Name:</label>
-                    <input type="text" name="LastName" className="form-control-md mt-2" onChange={(e) => setLastName(e.target.value)}/>
+                    <label htmlFor="LastName"></label>
+                    <input type="text" name="LastName" className="form-control-md mt-2" placeholder="Last Name"  onChange={(e) => setLastName(e.target.value)}/>
                 </div>
                 <div>
-                    <label htmlFor="Email">Email:</label>
-                    <input type="text" name="Email" className="form-control-md mt-2" onChange={(e) => setEmail(e.target.value)}/>
+                    <label htmlFor="Email"></label>
+                    <input type="text" name="Email" className="form-control-md mt-2" placeholder="Email:"  onChange={(e) => setEmail(e.target.value)}/>
                 </div>
                 <div>
-                    <label htmlFor="PhoneNumber">Phone Number:</label>
-                    <input type="tel" name="PhoneNumber" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" className="form-control-md mt-2" onChange={(e) => setPhoneNumber(e.target.value)}/>
+                    <label htmlFor="PhoneNumber"></label>
+                    <input type="tel" name="PhoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="PH# 555-555-5555"  className="form-control-md mt-2" onChange={(e) => setPhoneNumber(e.target.value)}/>
                 </div>
                 <div>
-                    <label htmlFor="ZipCode">Zip Code:</label>
-                    <input type="text" name="ZipCode" className="form-control-md mt-2" onChange={(e) => setZipCode(e.target.value)} />
+                    <label htmlFor="ZipCode"></label>
+                    <input type="text" name="ZipCode" className="form-control-md mt-2" placeholder="Zip Code:"  onChange={(e) => setZipCode(e.target.value)} />
                 </div>
                 <div>
-                    <label htmlFor="IntOrExt">Interior or Exterior:</label>
-                    <input type="text" name="IntOrExt" className="form-control-md mt-2" onChange={(e) => setIntOrExt(e.target.value)} />
+                    <label htmlFor="IntOrExt"></label>
+                    <input type="text" name="IntOrExt" className="form-control-md mt-2" placeholder="Interior/Exterior:"  onChange={(e) => setIntOrExt(e.target.value)} />
                 </div>
                 <div>
-                    <label htmlFor="NumberOfRooms" name="NumberOfRooms">Number of rooms:</label>
-                    <input type="text" name="NumberOfRooms" className="form-control-md mt-2" onChange={(e) => setNumberOfRooms(e.target.value)} />
+                    <label htmlFor="NumberOfRooms" name="NumberOfRooms"></label>
+                    <input type="text" name="NumberOfRooms" className="form-control-md mt-2" placeholder="# of Rooms / sqft:"  onChange={(e) => setNumberOfRooms(e.target.value)} />
                 </div>
                 <div>
-                    <label htmlFor="Desriptopm">Description</label>
-                    <textarea name="Description" id="" cols="30" rows="8" className="form-control-md mt-2" onChange={(e) => setDisctiption(e.target.value)}></textarea>   
+                    <label htmlFor="Desriptopm"></label>
+                    <input name="Time Frame" className="form-control-md mt-2" placeholder="Time Frame:"  onChange={(e) => setTimeFrame(e.target.value)}></input>   
                 </div>
                 <div>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Submit" className="form-control-md mt-2" />
                 </div>
 
             </form>
