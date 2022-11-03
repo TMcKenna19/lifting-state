@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Form = props => {
     const [FirstName, setFirstName] = useState("");
@@ -14,9 +14,13 @@ const Form = props => {
     
     const onSubmitHandler = e =>{
         e.preventDefault();
+        console.log("onSubmitHandler")
         const customerInfo = {FirstName, LastName, Email, PhoneNumber, ZipCode, IntOrExt, NumberOfRooms, TimeFrame};
         /** Pass in customerInfo into newLead ln 16 App  */
         props.newLead(customerInfo)
+        /** clear input value after submit */
+        e.target.reset();
+       
     }
 
     return(
