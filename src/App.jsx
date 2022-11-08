@@ -6,8 +6,12 @@ import Results from './Components/Results';
 
 function App() {
   /** Catches data from leadFormInfo after onSubmit ln 15 Form */
+  //(B) const [customerLeadInfo, setCustomerLeadInfo] = useState({});
   const [allLeadInfo, setAllLeadInfo] = useState([]);
 
+  /* (B) const addCustomerInfo = lead =>{
+         setCustomerLeadInfo(lead);
+  } */
   const addCustomerInfo = newLead =>{
     setAllLeadInfo([...allLeadInfo, newLead]);
   }
@@ -21,5 +25,5 @@ function App() {
   );
 }
 
-/**  */
+
 export default App;

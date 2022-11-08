@@ -14,9 +14,6 @@ const Form = props => {
     // const [TimeFrame, setTimeFrame] = useState("")
 
 
-    /**
-       
-     */
     const [leadFormInfo, setLeadFormInfo] = useState({
         FirstName: '',
         LastName: '',
@@ -32,11 +29,7 @@ const Form = props => {
     const onChangeHandler = e => {
         setLeadFormInfo({...leadFormInfo, [e.target.name]: e.target.value})
     }
-
-    const onCheckHandler = e => {
-        setLeadFormInfo({...leadFormInfo, [e.target.name]: e.target.checked})
-    }
-    
+  
     const onSubmitHandler = e =>{
         e.preventDefault();
         /*(B) const customerInfo = {FirstName, LastName, Email, PhoneNumber, ZipCode, IntOrExt, NumberOfRooms, TimeFrame};
@@ -50,13 +43,15 @@ const Form = props => {
 
     
 
+    
+
     return(
         <div>
             <h1>Request a Quote</h1>
             <form onSubmit={onSubmitHandler}>
                 <div>
                     <label htmlFor="FirstName"></label>
-                    <input type="text" name="FirstName"className="form-control-md mt-3" placeholder="First Name"  onChange={onChangeHandler}/>  {/**onChange={(e) => setFirstName(e.target.value)}/>  */}
+                    <input type="text" name="FirstName"className="form-control-md mt-3" placeholder="First Name"  onChange={onChangeHandler}/>  {/**(B) onChange={(e) => setFirstName(e.target.value)}/>  */}
                 </div>
                 <div>
                     <label htmlFor="LastName"></label>
