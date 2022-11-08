@@ -5,7 +5,7 @@ import Form from'./Components/Form';
 import Results from './Components/Results';
 
 function App() {
-  /** Catches data from customerQuoteInfo after onSubmit ln 17 Form */
+  /** Catches data from leadFormInfo after onSubmit ln 15 Form */
   const [allLeadInfo, setAllLeadInfo] = useState([]);
 
   const addCustomerInfo = newLead =>{
