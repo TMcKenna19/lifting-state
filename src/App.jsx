@@ -6,21 +6,27 @@ import Results from './Components/Results';
 
 function App() {
   /** Catches data from leadFormInfo after onSubmit ln 15 Form */
-  //(B) const [customerLeadInfo, setCustomerLeadInfo] = useState({});
   const [allLeadInfo, setAllLeadInfo] = useState([]);
 
-  /* (B) const addCustomerInfo = lead =>{
-         setCustomerLeadInfo(lead);
-  } */
   const addCustomerInfo = newLead =>{
     setAllLeadInfo([...allLeadInfo, newLead]);
   }
-  
 
+  const deleteLead = (e, idx ) =>{
+    let newLeadFormInfo = allLeadInfo.filter((lead, i)=>{
+        return i !=idx
+    })
+    setAllLeadInfo(newLeadFormInfo)
+  }
+  
+ 
+  
+  
   return (
     <div className="App">
      <Form newLead={addCustomerInfo}/>
-     <Results viewAllLeadInfo = {allLeadInfo}/>
+     <Results viewAllLeadInfo = {allLeadInfo}
+     deleteLead = {deleteLead} />
     </div>
   );
 }
