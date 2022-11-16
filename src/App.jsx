@@ -13,8 +13,9 @@ function App() {
   }
 
   const deleteLead = (e, idx ) =>{
+    console.log("Deleted ->", idx)
     let newLeadFormInfo = allLeadInfo.filter((lead, i)=>{
-        return i !=idx
+        return i !==idx
     })
     setAllLeadInfo(newLeadFormInfo)
   }

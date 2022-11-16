@@ -2,8 +2,14 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+const leadCalled = {
+    backgroundColor: "#7cfc00",
+    color:"ghostwhite"
+}
 
-
+const onCalledHandler = e =>{
+    console.log("called")
+}
 
 
 const Results = props => {
@@ -24,7 +30,8 @@ const Results = props => {
                         <h4>Int/Ext: {lead.Location}</h4>
                         <h4>Rms / SQFT: {lead.NumberOfRooms}</h4>
                         <h4>Wthin: {lead.TimeFrame}</h4>
-                        <button type="button" className="btn btn-outline-dark mt-2" onClick={(e)=>props.deleteLead(e, i)}>Delete</button>
+                        <button type="button" className="btn btn-outline-success mt-2" onClick={onCalledHandler}>Called</button>
+                        <button type="button" className="btn btn-outline-danger mt-2" onClick={(e)=>props.deleteLead(e, i)}>Delete</button>
                     </table>
                    
                 })
